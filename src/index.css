@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  font-family: "FK Grotesk Neue", sans-serif;
+}
+
+:root {
+  --dark-grey: #898989;
+}
+/*Layout*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 56px;
+  color: #fff;
+  background-color: var(--dark-grey);
+}
+.header .navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+.header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .headerRightSide,
+.header .headerLeftSide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.header .headerLeftSide {
+  gap: 60px;
+}
