@@ -1,0 +1,22 @@
+import { defineConfig, CookieSessionStorage } from "@shopify/hydrogen/config";
+
+export default defineConfig({
+  shopify: () => ({
+    defaultCountryCode: "US",
+    defaultLanguageCode: "EN",
+    storeDomain:
+      // @ts-ignore
+      "machinazo2.myshopify.com",
+    storefrontToken:
+      // @ts-ignore
+      "121c985a6d596b762e265504e3776e80",
+    storefrontApiVersion: "2022-07",
+  }),
+  session: CookieSessionStorage("__session", {
+    path: "/",
+    httpOnly: true,
+    secure: import.meta.env.PROD,
+    sameSite: "Strict",
+    maxAge: 60 * 60 * 24 * 30,
+  }),
+});
