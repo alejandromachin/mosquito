@@ -7,6 +7,7 @@ import {
   Seo,
 } from "@shopify/hydrogen";
 import { Suspense } from "react";
+import NavBar from "./NavBar";
 
 /**
  * A server component that defines a structure and organization of a page that can be used in different parts of the Hydrogen app
@@ -50,16 +51,42 @@ export function Layout({ children }) {
             Skip to content
           </a>
         </div>
-        <header
-          role="banner"
-          className={`flex items-center h-16 p-6 md:p-8 lg:p-12 sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 antialiased transition shadow-sm ${
-            isHome ? "bg-darkGrey text-white" : "bg-white/80"
-          }`}
-        >
-          <div className="flex gap-12">
+
+        <header role="banner" className="header">
+          <div className="headerLeftSide">
             <Link className="font-bold" to="/">
-              {shop.name}
+              M·O·S·Q·U·I·T·O
             </Link>
+            <NavBar />
+          </div>
+          <div className="headerRightSide">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={3}
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                fillRule="evenodd"
+                d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
         </header>
 
